@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg-main: #F1F1F1;
+  --bg-card: #FFFFFF;
+  --bg-surface: #F7F7F7;
+  --bg-surface-hover: #EFEFEF;
+  --border-color: #EAEAEA;
+  --border-subtle: #F0F0F0;
+  
+  --text-primary: #242424;
+  --text-secondary: #777777;
+  --text-muted: #999999;
+  
+  --coral: #F2643D;
+  --coral-light: rgba(242, 100, 61, 0.1);
+  --coral-hover: #E1532D;
+  
+  --dark-accent: #22221E;
+  --dark-hover: #33332D;
+  
+  --success: #36A879;
+  --success-bg: rgba(54, 168, 121, 0.1);
+  
+  --danger: #E45745;
+  --danger-bg: rgba(228, 87, 69, 0.1);
+
+  --info: #3B82F6;
+  --info-bg: rgba(59, 130, 246, 0.1);
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.06);
+  --shadow-coral: 0 4px 14px rgba(242, 100, 61, 0.3);
+  
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: #D5D5D5;
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B0B0B0;
+}
+
+/* Clean Fintech Card */
+.fintech-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fintech-card:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: #E0E0E0;
+}
+
+/* Clean Input & Controls */
+input, select, textarea {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+/* Remove number spinner controls */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Fintech Custom Dropdown Select */
+.fintech-select {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 7px 34px 7px 14px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-main);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23777777%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  width: auto;
+  transition: all 0.15s ease;
+}
+
+.fintech-select:hover {
+  border-color: #D0D0D0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.fintech-select:focus {
+  outline: none;
+  border-color: var(--coral);
+  box-shadow: 0 0 0 3px rgba(242, 100, 61, 0.15);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  background: #FFFFFF;
+  border-color: var(--coral);
+  box-shadow: 0 0 0 3px rgba(242, 100, 61, 0.15);
+}
+
+/* Buttons */
+button {
+  font-family: var(--font-main);
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-coral {
+  background: var(--coral);
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-coral);
+}
+.btn-coral:hover:not(:disabled) {
+  background: var(--coral-hover);
+  transform: translateY(-1px);
+}
+
+.btn-dark {
+  background: var(--dark-accent);
+  color: #FFFFFF;
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+}
+.btn-dark:hover:not(:disabled) {
+  background: var(--dark-hover);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+}
+.btn-outline:hover {
+  background: var(--bg-surface);
+  border-color: #D8D8D8;
+}
+
+/* Status Pill Badges */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.pill-success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.pill-danger {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.pill-coral {
+  background: var(--coral-light);
+  color: var(--coral);
+}
+
+.pill-neutral {
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+}
+
+/* Progress bar */
+.bar-track {
+  background: #EFEFEF;
+  border-radius: var(--radius-full);
+  height: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}

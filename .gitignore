@@ -1,0 +1,39 @@
+# Environments & Virtual Envs
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Environment Secrets
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+
+# Databases & User SQLite Data
+*.db
+*.sqlite
+*.sqlite3
+memory/*.db
+memory/users/
+
+# IDE & Editor settings
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
